@@ -11,7 +11,7 @@ app.config.from_object(Config())
 
 @app.route('/')
 def index():
-    items = get_items()
+    items = get_items
     return render_template('index.html', Items = items)
 
 @app.route('/add', methods=['POST'])
