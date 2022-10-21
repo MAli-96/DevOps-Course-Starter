@@ -1,6 +1,5 @@
 from pickle import FALSE
-from flask import Flask, request
-from flask import render_template
+from flask import Flask, request, redirect, url_for, render_template
 
 from todo_app.flask_config import Config
 from todo_app.data.session_items import get_items
@@ -15,8 +14,9 @@ def index():
     return render_template('index.html', Items = items)
 
 @app.route('/add', methods=['POST'])
-def add():
-    get_items = request.form.get('title')
+def add_item():
+    add_item(request.form.get('title'))
+    return redirect(url_for('index'))
 
-    if __name__ == '__main__':
-        app.run()
+    if __name__ == "__main__":
+        app.run(debug=True)

@@ -8,8 +8,8 @@ app.config.from_object(Config())
 
 @app.route('/')
 def index():
-    return render_template('index.html', list_items=get_items())
-
+    
+    
 @app.route('/add', methods=['POST'])
 def add_item():
     add_item(request.form.get('title'))

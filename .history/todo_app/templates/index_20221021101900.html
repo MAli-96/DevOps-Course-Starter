@@ -11,10 +11,19 @@
     <div class="col-md-12">
       <h2>Items</h2>
       <ul class="list-group mb-4">
-        {% for item in Items %}
-            <li>{{title}}</li>
+        {% for item in list_items %}
+            <li> Number {{ item.id }} - {{item.title}} - {{item.status}}  </li>
         {% endfor %}
       </ul>
     </div>
   </div>
+ 
+  
+  <form action="/additem" method="POST">
+  <label for="title">Add Item:</label><br>
+  <input type="text" id="id" name="title" value=""><br>
+  <input type="submit" value="Submit">
+</form>
+  
+  
 {% endblock %}

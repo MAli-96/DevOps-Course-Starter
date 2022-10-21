@@ -6,9 +6,11 @@ from todo_app.data.session_items import get_items
 app = Flask(__name__)
 app.config.from_object(Config())
 
+
 @app.route('/')
 def index():
-    return render_template('index.html', list_items=get_items())
+    items = get_items()
+    return render_template('index.html', Items = items)
 
 @app.route('/add', methods=['POST'])
 def add_item():
