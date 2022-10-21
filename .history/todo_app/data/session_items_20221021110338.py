@@ -81,3 +81,5 @@ def delete_item(id):
     session['items'] = items
     
     return session.get('items', _DEFAULT_ITEMS)
+
+    

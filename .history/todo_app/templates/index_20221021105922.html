@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}To-Do App{% endblock %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">To-Do App</h1>
+    <p class="lead">Just another to-do app.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Items</h2>
+      <ul class="list-group mb-4">
+        <form action="" method="POST">
+          {% for item in items %}
+            <div>
+                <input type="checkbox" id="item" name="item" value={{ item.id }}
+                {% if item.checked %} checked {% endif %}>
+                <label for={{ item.id }}>{{ item.title }}</label>
+                <input type="submit" name="delete_{{ item.id }}" value="Delete">
+            </div>
+          {% endfor %}
+          <input type="submit" value="Save">
+          <div>
+            <label for="field_name">Add new item: </label>
+            <input type="text" name="field_name" id="field_name">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </ul>
+    </div>
+  </div>
+{% endblock %}
