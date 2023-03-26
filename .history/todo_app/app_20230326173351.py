@@ -40,7 +40,5 @@ def add():
 def complete_item(item_id):
     update_item_status(item_id, 'Done')
 
-    return redirect('/')
-
 if __name__ == '__main__':
     app.run()

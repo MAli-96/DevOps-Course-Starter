@@ -15,7 +15,7 @@ def fetch_todo_items():
     params = {
         "key": API_KEY,
         "token": API_TOKEN,
-        "cards": "open"
+        "cards": "open"  # include card data in the response
     }
     response = requests.get(CARDS_URL, params=params)
 

@@ -15,7 +15,7 @@ def fetch_todo_items():
     params = {
         "key": API_KEY,
         "token": API_TOKEN,
-        "cards": "open"
+        "cards": "open"  # include card data in the response
     }
     response = requests.get(CARDS_URL, params=params)
 
@@ -49,7 +49,7 @@ def update_item_status(card_id, list_id):
 
     updated_card = response.json()
 
-    return updated_card 
+    return updated_card
 
 def get_to_do_list_id():
     params = {

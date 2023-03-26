@@ -23,11 +23,6 @@
           <li>
             <a href="{{url_for('get', id=item.id)}}">{{ item.title }}
           </li>
-          {% for item in todo_items %}
-  <div>
-    <p>{{ item.name }}</p>
-    <a href="/complete_item/{{ item.id }}">Complete</a>
-  </div>
         {% endfor %}
       </ul>
     </div>
