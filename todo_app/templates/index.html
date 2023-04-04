@@ -21,9 +21,8 @@
       <ul class="list-group mb-4">
         {% for item in items %}
           <li>
-            <a href="{{url_for('get', id=item.id)}}">{{ item.title }}
+            <a href="{{url_for('get', id=item.id)}}">{{ item.title }} </a>
           </li>
-          {% for item in todo_items %}
   <div>
     <p>{{ item.name }}</p>
     <a href="/complete_item/{{ item.id }}">Complete</a>
